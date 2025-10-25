@@ -1,0 +1,114 @@
+warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2024 which implies `resolver = "3"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2024 resolver, specify `workspace.resolver = "3"` in the workspace root's manifest
+note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+warning: unused variable: `app`
+  --> common/src/lib.rs:21:21
+   |
+21 |     fn build(&self, app: &mut App) {}
+   |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `common` (lib) generated 1 warning
+warning: unused variable: `app`
+ --> protocol/src/channels.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `app`
+ --> protocol/src/components.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+
+warning: unused variable: `app`
+ --> protocol/src/inputs.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+
+warning: unused variable: `app`
+ --> protocol/src/messages.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+
+warning: `protocol` (lib) generated 4 warnings
+warning: unused import: `LocalClient`
+ --> client/src/main.rs:9:15
+  |
+9 |     network::{LocalClient, NetworkPlugins},
+  |               ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `app`
+ --> client/src/editor.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: variant `Token` is never constructed
+  --> client/src/network.rs:34:5
+   |
+33 | pub enum JoinGameEvent {
+   |          ------------- variant in this enum
+34 |     Token {
+   |     ^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: variants `InEditor` and `Pause` are never constructed
+  --> client/src/states.rs:28:5
+   |
+25 | pub enum GameState {
+   |          --------- variants in this enum
+...
+28 |     InEditor,
+   |     ^^^^^^^^
+29 |     Pause,
+   |     ^^^^^
+   |
+   = note: `GameState` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: `client` (bin "client") generated 4 warnings (run `cargo fix --bin "client"` to apply 1 suggestion)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 0.20s
+     Running `target/debug/client -a '127.0.0.1:16565'`
+[2m2025-10-25T21:19:29.457267Z[0m [32m INFO[0m [2mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[2m:[0m SystemInfo { os: "Linux (Fedora Linux 42)", kernel: "6.17.4-200.fc42.x86_64", cpu: "12th Gen Intel(R) Core(TM) i7-12700H", core_count: "14", memory: "62.6 GiB" }
+[2m2025-10-25T21:19:29.563600Z[0m [32m INFO[0m [2mbevy_render::renderer[0m[2m:[0m AdapterInfo { name: "NVIDIA GeForce RTX 3070 Laptop GPU", vendor: 4318, device: 9437, device_type: DiscreteGpu, driver: "NVIDIA", driver_info: "580.95.05", backend: Vulkan }
+[2m2025-10-25T21:19:29.814975Z[0m [32m INFO[0m [2mclient::config[0m[2m:[0m Client ID: 1761427169814
+[2m2025-10-25T21:19:29.849754Z[0m [32m INFO[0m [2mbevy_render::batching::gpu_preprocessing[0m[2m:[0m GPU preprocessing is fully supported on this device.
+[2m2025-10-25T21:19:29.851791Z[0m [32m INFO[0m [2mbevy_winit::system[0m[2m:[0m Creating new window client (0v0)
+[2m2025-10-25T21:19:29.854205Z[0m [32m INFO[0m [2mclient::config[0m[2m:[0m Remote Address: 127.0.0.1:16565
+[2m2025-10-25T21:19:29.854244Z[0m [32m INFO[0m [2mclient::config[0m[2m:[0m Key: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2m2025-10-25T21:19:29.854890Z[0m [32m INFO[0m [2mclient::network[0m[2m:[0m Joining 127.0.0.1:16565
+[2m2025-10-25T21:19:29.854926Z[0m [32m INFO[0m [2mclient::network[0m[2m:[0m Connected to 127.0.0.1:16565
+[2m2025-10-25T21:19:29.854990Z[0m [32m INFO[0m [2mlightyear_netcode::client[0m[2m:[0m client connecting to server 127.0.0.1:16565 [1/1]
+[2m2025-10-25T21:19:29.855018Z[0m [32m INFO[0m [2mlightyear_udp[0m[2m:[0m UDP socket bound to 0.0.0.0:0
+[2m2025-10-25T21:19:29.857156Z[0m [32m INFO[0m [2mclient::game::world[0m[2m:[0m Setting up scene
+
+thread 'Async Compute Task Pool (0)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga-26.0.0/src/back/glsl/mod.rs:1306:44:
+internal error: entered unreachable code
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'Async Compute Task Pool (2)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+
+thread 'Async Compute Task Pool (3)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+
+thread 'Async Compute Task Pool (0)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+
+thread 'Async Compute Task Pool (2)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:481:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+Encountered a panic in system `bevy_render::render_resource::pipeline_cache::PipelineCache::process_pipeline_queue_system`!

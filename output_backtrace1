@@ -1,0 +1,897 @@
+warning: virtual workspace defaulting to `resolver = "1"` despite one or more workspace members being on edition 2024 which implies `resolver = "3"`
+note: to keep the current resolver, specify `workspace.resolver = "1"` in the workspace root's manifest
+note: to use the edition 2024 resolver, specify `workspace.resolver = "3"` in the workspace root's manifest
+note: for more details see https://doc.rust-lang.org/cargo/reference/resolver.html#resolver-versions
+warning: unused variable: `app`
+  --> common/src/lib.rs:21:21
+   |
+21 |     fn build(&self, app: &mut App) {}
+   |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+   |
+   = note: `#[warn(unused_variables)]` on by default
+
+warning: `common` (lib) generated 1 warning
+warning: unused variable: `app`
+ --> protocol/src/channels.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `app`
+ --> protocol/src/components.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+
+warning: unused variable: `app`
+ --> protocol/src/inputs.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+
+warning: unused variable: `app`
+ --> protocol/src/messages.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+
+warning: `protocol` (lib) generated 4 warnings
+warning: unused import: `LocalClient`
+ --> client/src/main.rs:9:15
+  |
+9 |     network::{LocalClient, NetworkPlugins},
+  |               ^^^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `app`
+ --> client/src/editor.rs:6:21
+  |
+6 |     fn build(&self, app: &mut App) {}
+  |                     ^^^ help: if this is intentional, prefix it with an underscore: `_app`
+  |
+  = note: `#[warn(unused_variables)]` on by default
+
+warning: variant `Token` is never constructed
+  --> client/src/network.rs:34:5
+   |
+33 | pub enum JoinGameEvent {
+   |          ------------- variant in this enum
+34 |     Token {
+   |     ^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: variants `InEditor` and `Pause` are never constructed
+  --> client/src/states.rs:28:5
+   |
+25 | pub enum GameState {
+   |          --------- variants in this enum
+...
+28 |     InEditor,
+   |     ^^^^^^^^
+29 |     Pause,
+   |     ^^^^^
+   |
+   = note: `GameState` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+
+warning: `client` (bin "client") generated 4 warnings (run `cargo fix --bin "client"` to apply 1 suggestion)
+    Finished `dev` profile [optimized + debuginfo] target(s) in 0.21s
+     Running `target/debug/client -a '127.0.0.1:16565'`
+[2m2025-10-25T21:20:03.876606Z[0m [32m INFO[0m [2mbevy_diagnostic::system_information_diagnostics_plugin::internal[0m[2m:[0m SystemInfo { os: "Linux (Fedora Linux 42)", kernel: "6.17.4-200.fc42.x86_64", cpu: "12th Gen Intel(R) Core(TM) i7-12700H", core_count: "14", memory: "62.6 GiB" }
+[2m2025-10-25T21:20:03.976785Z[0m [32m INFO[0m [2mbevy_render::renderer[0m[2m:[0m AdapterInfo { name: "NVIDIA GeForce RTX 3070 Laptop GPU", vendor: 4318, device: 9437, device_type: DiscreteGpu, driver: "NVIDIA", driver_info: "580.95.05", backend: Vulkan }
+[2m2025-10-25T21:20:04.211498Z[0m [32m INFO[0m [2mclient::config[0m[2m:[0m Client ID: 1761427204211
+[2m2025-10-25T21:20:04.247045Z[0m [32m INFO[0m [2mbevy_render::batching::gpu_preprocessing[0m[2m:[0m GPU preprocessing is fully supported on this device.
+[2m2025-10-25T21:20:04.249212Z[0m [32m INFO[0m [2mbevy_winit::system[0m[2m:[0m Creating new window client (0v0)
+[2m2025-10-25T21:20:04.251382Z[0m [32m INFO[0m [2mclient::config[0m[2m:[0m Remote Address: 127.0.0.1:16565
+[2m2025-10-25T21:20:04.251409Z[0m [32m INFO[0m [2mclient::config[0m[2m:[0m Key: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+[2m2025-10-25T21:20:04.252066Z[0m [32m INFO[0m [2mclient::network[0m[2m:[0m Joining 127.0.0.1:16565
+[2m2025-10-25T21:20:04.252110Z[0m [32m INFO[0m [2mclient::network[0m[2m:[0m Connected to 127.0.0.1:16565
+[2m2025-10-25T21:20:04.252181Z[0m [32m INFO[0m [2mlightyear_netcode::client[0m[2m:[0m client connecting to server 127.0.0.1:16565 [1/1]
+[2m2025-10-25T21:20:04.252209Z[0m [32m INFO[0m [2mlightyear_udp[0m[2m:[0m UDP socket bound to 0.0.0.0:0
+[2m2025-10-25T21:20:04.254261Z[0m [32m INFO[0m [2mclient::game::world[0m[2m:[0m Setting up scene
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga-26.0.0/src/back/glsl/mod.rs:1306:44:
+internal error: entered unreachable code
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::panicking::panic
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:145:5
+   3: naga::back::glsl::Writer<W>::write_global
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga-26.0.0/src/back/glsl/mod.rs:1306:44
+   4: naga::back::glsl::Writer<W>::write
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga-26.0.0/src/back/glsl/mod.rs:980:26
+   5: naga_oil::compose::Composer::naga_to_string
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:566:24
+   6: naga_oil::compose::Composer::create_composable_module
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1216:22
+   7: naga_oil::compose::Composer::ensure_import
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1382:14
+   8: naga_oil::compose::Composer::ensure_imports
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1413:24
+   9: naga_oil::compose::Composer::ensure_import
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1379:14
+  10: naga_oil::compose::Composer::ensure_imports
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1413:24
+  11: naga_oil::compose::Composer::ensure_import
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1379:14
+  12: naga_oil::compose::Composer::ensure_imports
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1413:24
+  13: naga_oil::compose::Composer::make_naga_module
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/naga_oil-0.19.1/src/compose/mod.rs:1734:14
+  14: bevy_shader::shader_cache::ShaderCache<ShaderModule,RenderDevice>::get
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_shader-0.17.2/src/shader_cache.rs:271:50
+  15: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_render_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:484:56
+  16: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+  17: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+  18: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+  19: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+  20: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  21: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  22: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  23: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  24: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  25: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  26: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  27: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  28: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  29: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  30: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  31: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  32: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  33: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  34: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  35: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  36: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  37: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  38: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  39: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  40: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (1)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (3)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (0)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_compute_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:592:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+
+thread 'Async Compute Task Pool (2)' panicked at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:481:60:
+called `Result::unwrap()` on an `Err` value: PoisonError { .. }
+stack backtrace:
+   0: __rustc::rust_begin_unwind
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/std/src/panicking.rs:697:5
+   1: core::panicking::panic_fmt
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/panicking.rs:75:14
+   2: core::result::unwrap_failed
+             at /rustc/1159e78c4747b02ef996e55082b704c09b970588/library/core/src/result.rs:1765:5
+   3: core::result::Result<T,E>::unwrap
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/result.rs:1167:23
+   4: bevy_render::render_resource::pipeline_cache::PipelineCache::start_create_render_pipeline::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_render-0.17.2/src/render_resource/pipeline_cache.rs:481:60
+   5: <async_executor::AsyncCallOnDrop<Fut,Cleanup> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:1197:31
+   6: async_task::raw::RawTask<F,T,S,M>::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:550:21
+   7: core::ops::function::FnOnce::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/ops/function.rs:253:5
+   8: <core::panic::unwind_safe::AssertUnwindSafe<F> as core::ops::function::FnOnce<()>>::call_once
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/panic/unwind_safe.rs:272:9
+   9: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  10: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  11: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  12: async_task::raw::RawTask<F,T,S,M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/raw.rs:549:23
+  13: async_task::runnable::Runnable<M>::run
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-task-4.7.1/src/runnable.rs:781:18
+  14: async_executor::State::run::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:751:30
+  15: <futures_lite::future::Or<F1,F2> as core::future::future::Future>::poll
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:454:46
+  16: async_executor::State::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:758:32
+  17: async_executor::Executor::run::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/async-executor-1.13.3/src/lib.rs:344:34
+  18: futures_lite::future::block_on::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:96:35
+  19: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  20: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  21: futures_lite::future::block_on
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/futures-lite-2.6.1/src/future.rs:75:11
+  22: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:203:37
+  23: std::panicking::catch_unwind::do_call
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:589:40
+  24: std::panicking::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panicking.rs:552:19
+  25: std::panic::catch_unwind
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/panic.rs:359:14
+  26: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:197:43
+  27: std::thread::local::LocalKey<T>::try_with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:315:12
+  28: std::thread::local::LocalKey<T>::with
+             at /home/xcf/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/std/src/thread/local.rs:279:20
+  29: bevy_tasks::task_pool::TaskPool::new_internal::{{closure}}::{{closure}}
+             at /home/xcf/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/bevy_tasks-0.17.2/src/task_pool.rs:190:50
+note: Some details are omitted, run with `RUST_BACKTRACE=full` for a verbose backtrace.
+Encountered a panic in system `bevy_render::render_resource::pipeline_cache::PipelineCache::process_pipeline_queue_system`!
