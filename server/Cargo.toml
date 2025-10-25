@@ -1,0 +1,19 @@
+[package]
+name = "server"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+bevy = { workspace = true }
+avian3d = { workspace = true }
+lightyear = { workspace = true, features = ["replication"] }
+
+rayon = { workspace = true }
+clap = { workspace = true }
+rand = { workspace = true }
+log = { workspace = true }
+serde = { workspace = true }
+toml = { workspace = true }
+
+common = { path = "../common" }
+protocol = { path = "../protocol" }
